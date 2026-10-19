@@ -1,0 +1,941 @@
+[
+  {
+    "id": "4784866a-85a0-4bd7-ba65-b10639f200ce",
+    "sessionId": "c733b71a-dda4-4200-868a-91b9132545a5",
+    "input": "预算 80 元，想买点办公室分享的咸口零食",
+    "reason": "推荐商品中低糖每日坚果（45.9元）被描述为偏甜，但用户要求咸口零食，且该商品标签无咸口，属于不相关推荐。；计算总价时使用了满129减20券，但推荐商品总价161.5元，实际推荐组合（海盐芝士小饼干+咸蛋黄糯米锅巴）仅49.8元，未达到券使用门槛，却提及券后价，造成误导。；推荐组合总价49.8元，但回复中未明确说明该组合未使用优惠券，且未提及运费等可能额外费用。",
+    "trace": [
+      {
+        "id": "step_1",
+        "capability": "need-extraction",
+        "type": "skill",
+        "purpose": "必经 Skill · $need-extraction",
+        "status": "success",
+        "input": {
+          "userInput": "预算 80 元，想买点办公室分享的咸口零食",
+          "conversation_history": []
+        },
+        "output": {
+          "intent": "购买零食",
+          "taste": [
+            "咸"
+          ],
+          "categories": [
+            "零食"
+          ],
+          "budget": 80,
+          "quantity": 1,
+          "scenario": "办公室分享",
+          "constraints": [],
+          "needs_price": true
+        },
+        "startedAt": "2026-07-02T16:54:07.670Z",
+        "durationMs": 1258,
+        "attempts": 1
+      },
+      {
+        "id": "step_2",
+        "capability": "query_products",
+        "type": "tool",
+        "purpose": "规则要求 · query_products",
+        "status": "success",
+        "input": {
+          "need": {
+            "intent": "购买零食",
+            "taste": [
+              "咸"
+            ],
+            "categories": [
+              "零食"
+            ],
+            "budget": 80,
+            "quantity": 1,
+            "scenario": "办公室分享",
+            "constraints": [],
+            "needs_price": true
+          }
+        },
+        "output": {
+          "products": [
+            {
+              "id": "P002",
+              "name": "低糖每日坚果",
+              "category": "坚果",
+              "tags": [
+                "低糖",
+                "健康",
+                "独立包装"
+              ],
+              "price": 45.9,
+              "stock": 83,
+              "rating": 4.9,
+              "description": "6种坚果果干搭配，无额外蔗糖。"
+            },
+            {
+              "id": "P001",
+              "name": "海盐芝士小饼干",
+              "category": "饼干",
+              "tags": [
+                "咸口",
+                "芝士",
+                "独立包装"
+              ],
+              "price": 29.9,
+              "stock": 126,
+              "rating": 4.8,
+              "description": "酥脆咸香，独立小包，适合办公室分享。"
+            },
+            {
+              "id": "P004",
+              "name": "冻干草莓脆",
+              "category": "果干",
+              "tags": [
+                "酸甜",
+                "低脂",
+                "儿童"
+              ],
+              "price": 25.9,
+              "stock": 155,
+              "rating": 4.8,
+              "description": "整颗草莓冻干，配料简单，酥脆酸甜。"
+            },
+            {
+              "id": "P003",
+              "name": "麻辣牛肉脯",
+              "category": "肉类零食",
+              "tags": [
+                "辣味",
+                "高蛋白",
+                "耐嚼"
+              ],
+              "price": 39.9,
+              "stock": 62,
+              "rating": 4.7,
+              "description": "川香麻辣，肉香浓郁，越嚼越香。"
+            },
+            {
+              "id": "P006",
+              "name": "咸蛋黄糯米锅巴",
+              "category": "膨化",
+              "tags": [
+                "咸口",
+                "酥脆",
+                "网红"
+              ],
+              "price": 19.9,
+              "stock": 203,
+              "rating": 4.7,
+              "description": "咸蛋黄均匀裹粉，米香酥脆。"
+            }
+          ],
+          "filterFallback": true
+        },
+        "startedAt": "2026-07-02T16:54:08.928Z",
+        "durationMs": 1,
+        "attempts": 1
+      },
+      {
+        "id": "step_3",
+        "capability": "query_activities",
+        "type": "tool",
+        "purpose": "规则要求 · query_activities",
+        "status": "success",
+        "input": {
+          "need": {
+            "intent": "购买零食",
+            "taste": [
+              "咸"
+            ],
+            "categories": [
+              "零食"
+            ],
+            "budget": 80,
+            "quantity": 1,
+            "scenario": "办公室分享",
+            "constraints": [],
+            "needs_price": true
+          },
+          "products": [
+            {
+              "id": "P002",
+              "name": "低糖每日坚果",
+              "category": "坚果",
+              "tags": [
+                "低糖",
+                "健康",
+                "独立包装"
+              ],
+              "price": 45.9,
+              "stock": 83,
+              "rating": 4.9,
+              "description": "6种坚果果干搭配，无额外蔗糖。"
+            },
+            {
+              "id": "P001",
+              "name": "海盐芝士小饼干",
+              "category": "饼干",
+              "tags": [
+                "咸口",
+                "芝士",
+                "独立包装"
+              ],
+              "price": 29.9,
+              "stock": 126,
+              "rating": 4.8,
+              "description": "酥脆咸香，独立小包，适合办公室分享。"
+            },
+            {
+              "id": "P004",
+              "name": "冻干草莓脆",
+              "category": "果干",
+              "tags": [
+                "酸甜",
+                "低脂",
+                "儿童"
+              ],
+              "price": 25.9,
+              "stock": 155,
+              "rating": 4.8,
+              "description": "整颗草莓冻干，配料简单，酥脆酸甜。"
+            },
+            {
+              "id": "P003",
+              "name": "麻辣牛肉脯",
+              "category": "肉类零食",
+              "tags": [
+                "辣味",
+                "高蛋白",
+                "耐嚼"
+              ],
+              "price": 39.9,
+              "stock": 62,
+              "rating": 4.7,
+              "description": "川香麻辣，肉香浓郁，越嚼越香。"
+            },
+            {
+              "id": "P006",
+              "name": "咸蛋黄糯米锅巴",
+              "category": "膨化",
+              "tags": [
+                "咸口",
+                "酥脆",
+                "网红"
+              ],
+              "price": 19.9,
+              "stock": 203,
+              "rating": 4.7,
+              "description": "咸蛋黄均匀裹粉，米香酥脆。"
+            }
+          ]
+        },
+        "output": {
+          "activities": [
+            {
+              "id": "A001",
+              "name": "零食满减季",
+              "type": "threshold_reduction",
+              "threshold": 99,
+              "discount": 15,
+              "enabled": true,
+              "description": "实付商品金额满99元减15元"
+            },
+            {
+              "id": "A002",
+              "name": "坚果组合优惠",
+              "type": "category_discount",
+              "category": "坚果",
+              "rate": 0.9,
+              "enabled": true,
+              "description": "坚果类商品9折"
+            }
+          ]
+        },
+        "startedAt": "2026-07-02T16:54:08.929Z",
+        "durationMs": 1,
+        "attempts": 1
+      },
+      {
+        "id": "step_4",
+        "capability": "query_coupons",
+        "type": "tool",
+        "purpose": "规则要求 · query_coupons",
+        "status": "success",
+        "input": {
+          "need": {
+            "intent": "购买零食",
+            "taste": [
+              "咸"
+            ],
+            "categories": [
+              "零食"
+            ],
+            "budget": 80,
+            "quantity": 1,
+            "scenario": "办公室分享",
+            "constraints": [],
+            "needs_price": true
+          },
+          "products": [
+            {
+              "id": "P002",
+              "name": "低糖每日坚果",
+              "category": "坚果",
+              "tags": [
+                "低糖",
+                "健康",
+                "独立包装"
+              ],
+              "price": 45.9,
+              "stock": 83,
+              "rating": 4.9,
+              "description": "6种坚果果干搭配，无额外蔗糖。"
+            },
+            {
+              "id": "P001",
+              "name": "海盐芝士小饼干",
+              "category": "饼干",
+              "tags": [
+                "咸口",
+                "芝士",
+                "独立包装"
+              ],
+              "price": 29.9,
+              "stock": 126,
+              "rating": 4.8,
+              "description": "酥脆咸香，独立小包，适合办公室分享。"
+            },
+            {
+              "id": "P004",
+              "name": "冻干草莓脆",
+              "category": "果干",
+              "tags": [
+                "酸甜",
+                "低脂",
+                "儿童"
+              ],
+              "price": 25.9,
+              "stock": 155,
+              "rating": 4.8,
+              "description": "整颗草莓冻干，配料简单，酥脆酸甜。"
+            },
+            {
+              "id": "P003",
+              "name": "麻辣牛肉脯",
+              "category": "肉类零食",
+              "tags": [
+                "辣味",
+                "高蛋白",
+                "耐嚼"
+              ],
+              "price": 39.9,
+              "stock": 62,
+              "rating": 4.7,
+              "description": "川香麻辣，肉香浓郁，越嚼越香。"
+            },
+            {
+              "id": "P006",
+              "name": "咸蛋黄糯米锅巴",
+              "category": "膨化",
+              "tags": [
+                "咸口",
+                "酥脆",
+                "网红"
+              ],
+              "price": 19.9,
+              "stock": 203,
+              "rating": 4.7,
+              "description": "咸蛋黄均匀裹粉，米香酥脆。"
+            }
+          ],
+          "activities": [
+            {
+              "id": "A001",
+              "name": "零食满减季",
+              "type": "threshold_reduction",
+              "threshold": 99,
+              "discount": 15,
+              "enabled": true,
+              "description": "实付商品金额满99元减15元"
+            },
+            {
+              "id": "A002",
+              "name": "坚果组合优惠",
+              "type": "category_discount",
+              "category": "坚果",
+              "rate": 0.9,
+              "enabled": true,
+              "description": "坚果类商品9折"
+            }
+          ]
+        },
+        "output": {
+          "coupons": [
+            {
+              "id": "C001",
+              "name": "新人券",
+              "threshold": 59,
+              "discount": 8,
+              "enabled": true,
+              "stackable": true
+            },
+            {
+              "id": "C002",
+              "name": "满129减20券",
+              "threshold": 129,
+              "discount": 20,
+              "enabled": true,
+              "stackable": true
+            },
+            {
+              "id": "C003",
+              "name": "品类券",
+              "threshold": 49,
+              "discount": 6,
+              "category": "坚果",
+              "enabled": true,
+              "stackable": false
+            }
+          ]
+        },
+        "startedAt": "2026-07-02T16:54:08.930Z",
+        "durationMs": 0,
+        "attempts": 1
+      },
+      {
+        "id": "step_5",
+        "capability": "calculate_price",
+        "type": "tool",
+        "purpose": "规则要求 · calculate_price",
+        "status": "success",
+        "input": {
+          "need": {
+            "intent": "购买零食",
+            "taste": [
+              "咸"
+            ],
+            "categories": [
+              "零食"
+            ],
+            "budget": 80,
+            "quantity": 1,
+            "scenario": "办公室分享",
+            "constraints": [],
+            "needs_price": true
+          },
+          "products": [
+            {
+              "id": "P002",
+              "name": "低糖每日坚果",
+              "category": "坚果",
+              "tags": [
+                "低糖",
+                "健康",
+                "独立包装"
+              ],
+              "price": 45.9,
+              "stock": 83,
+              "rating": 4.9,
+              "description": "6种坚果果干搭配，无额外蔗糖。"
+            },
+            {
+              "id": "P001",
+              "name": "海盐芝士小饼干",
+              "category": "饼干",
+              "tags": [
+                "咸口",
+                "芝士",
+                "独立包装"
+              ],
+              "price": 29.9,
+              "stock": 126,
+              "rating": 4.8,
+              "description": "酥脆咸香，独立小包，适合办公室分享。"
+            },
+            {
+              "id": "P004",
+              "name": "冻干草莓脆",
+              "category": "果干",
+              "tags": [
+                "酸甜",
+                "低脂",
+                "儿童"
+              ],
+              "price": 25.9,
+              "stock": 155,
+              "rating": 4.8,
+              "description": "整颗草莓冻干，配料简单，酥脆酸甜。"
+            },
+            {
+              "id": "P003",
+              "name": "麻辣牛肉脯",
+              "category": "肉类零食",
+              "tags": [
+                "辣味",
+                "高蛋白",
+                "耐嚼"
+              ],
+              "price": 39.9,
+              "stock": 62,
+              "rating": 4.7,
+              "description": "川香麻辣，肉香浓郁，越嚼越香。"
+            },
+            {
+              "id": "P006",
+              "name": "咸蛋黄糯米锅巴",
+              "category": "膨化",
+              "tags": [
+                "咸口",
+                "酥脆",
+                "网红"
+              ],
+              "price": 19.9,
+              "stock": 203,
+              "rating": 4.7,
+              "description": "咸蛋黄均匀裹粉，米香酥脆。"
+            }
+          ],
+          "activities": [
+            {
+              "id": "A001",
+              "name": "零食满减季",
+              "type": "threshold_reduction",
+              "threshold": 99,
+              "discount": 15,
+              "enabled": true,
+              "description": "实付商品金额满99元减15元"
+            },
+            {
+              "id": "A002",
+              "name": "坚果组合优惠",
+              "type": "category_discount",
+              "category": "坚果",
+              "rate": 0.9,
+              "enabled": true,
+              "description": "坚果类商品9折"
+            }
+          ],
+          "coupons": [
+            {
+              "id": "C001",
+              "name": "新人券",
+              "threshold": 59,
+              "discount": 8,
+              "enabled": true,
+              "stackable": true
+            },
+            {
+              "id": "C002",
+              "name": "满129减20券",
+              "threshold": 129,
+              "discount": 20,
+              "enabled": true,
+              "stackable": true
+            },
+            {
+              "id": "C003",
+              "name": "品类券",
+              "threshold": 49,
+              "discount": 6,
+              "category": "坚果",
+              "enabled": true,
+              "stackable": false
+            }
+          ]
+        },
+        "output": {
+          "subtotal": 161.5,
+          "activityApplied": {
+            "id": "A001",
+            "name": "零食满减季"
+          },
+          "couponApplied": {
+            "id": "C002",
+            "name": "满129减20券",
+            "discount": 20
+          },
+          "savings": 35,
+          "finalPrice": 126.5,
+          "note": "按推荐商品各 1 件试算，不含运费"
+        },
+        "startedAt": "2026-07-02T16:54:08.930Z",
+        "durationMs": 1,
+        "attempts": 1
+      },
+      {
+        "id": "step_6",
+        "capability": "recommendation-decision",
+        "type": "skill",
+        "purpose": "必经 Skill · $recommendation-decision",
+        "status": "success",
+        "input": {
+          "userInput": "预算 80 元，想买点办公室分享的咸口零食",
+          "conversation_history": [],
+          "need": {
+            "intent": "购买零食",
+            "taste": [
+              "咸"
+            ],
+            "categories": [
+              "零食"
+            ],
+            "budget": 80,
+            "quantity": 1,
+            "scenario": "办公室分享",
+            "constraints": [],
+            "needs_price": true
+          },
+          "products": [
+            {
+              "id": "P002",
+              "name": "低糖每日坚果",
+              "category": "坚果",
+              "tags": [
+                "低糖",
+                "健康",
+                "独立包装"
+              ],
+              "price": 45.9,
+              "stock": 83,
+              "rating": 4.9,
+              "description": "6种坚果果干搭配，无额外蔗糖。"
+            },
+            {
+              "id": "P001",
+              "name": "海盐芝士小饼干",
+              "category": "饼干",
+              "tags": [
+                "咸口",
+                "芝士",
+                "独立包装"
+              ],
+              "price": 29.9,
+              "stock": 126,
+              "rating": 4.8,
+              "description": "酥脆咸香，独立小包，适合办公室分享。"
+            },
+            {
+              "id": "P004",
+              "name": "冻干草莓脆",
+              "category": "果干",
+              "tags": [
+                "酸甜",
+                "低脂",
+                "儿童"
+              ],
+              "price": 25.9,
+              "stock": 155,
+              "rating": 4.8,
+              "description": "整颗草莓冻干，配料简单，酥脆酸甜。"
+            },
+            {
+              "id": "P003",
+              "name": "麻辣牛肉脯",
+              "category": "肉类零食",
+              "tags": [
+                "辣味",
+                "高蛋白",
+                "耐嚼"
+              ],
+              "price": 39.9,
+              "stock": 62,
+              "rating": 4.7,
+              "description": "川香麻辣，肉香浓郁，越嚼越香。"
+            },
+            {
+              "id": "P006",
+              "name": "咸蛋黄糯米锅巴",
+              "category": "膨化",
+              "tags": [
+                "咸口",
+                "酥脆",
+                "网红"
+              ],
+              "price": 19.9,
+              "stock": 203,
+              "rating": 4.7,
+              "description": "咸蛋黄均匀裹粉，米香酥脆。"
+            }
+          ],
+          "mcpResults": [],
+          "skillResults": []
+        },
+        "output": {
+          "recommended_product_ids": [
+            "P001",
+            "P006",
+            "P002"
+          ],
+          "decision_summary": "用户预算80元，需要咸口零食用于办公室分享。首选海盐芝士小饼干（29.9元，咸口，独立包装，适合分享），其次咸蛋黄糯米锅巴（19.9元，咸口酥脆，独立包装），再搭配低糖每日坚果（45.9元，健康独立包装，总价95.7元略超预算，但可调整）。若严格控制在80元内，可选P001+P006（49.8元）或P001+P002（75.8元）。"
+        },
+        "startedAt": "2026-07-02T16:54:08.931Z",
+        "durationMs": 2240,
+        "attempts": 1
+      },
+      {
+        "id": "step_7",
+        "capability": "recommendation-reason",
+        "type": "skill",
+        "purpose": "必经 Skill · $recommendation-reason",
+        "status": "success",
+        "input": {
+          "conversation_history": [],
+          "need": {
+            "intent": "购买零食",
+            "taste": [
+              "咸"
+            ],
+            "categories": [
+              "零食"
+            ],
+            "budget": 80,
+            "quantity": 1,
+            "scenario": "办公室分享",
+            "constraints": [],
+            "needs_price": true
+          },
+          "products": [
+            {
+              "id": "P002",
+              "name": "低糖每日坚果",
+              "category": "坚果",
+              "tags": [
+                "低糖",
+                "健康",
+                "独立包装"
+              ],
+              "price": 45.9,
+              "stock": 83,
+              "rating": 4.9,
+              "description": "6种坚果果干搭配，无额外蔗糖。"
+            },
+            {
+              "id": "P001",
+              "name": "海盐芝士小饼干",
+              "category": "饼干",
+              "tags": [
+                "咸口",
+                "芝士",
+                "独立包装"
+              ],
+              "price": 29.9,
+              "stock": 126,
+              "rating": 4.8,
+              "description": "酥脆咸香，独立小包，适合办公室分享。"
+            },
+            {
+              "id": "P006",
+              "name": "咸蛋黄糯米锅巴",
+              "category": "膨化",
+              "tags": [
+                "咸口",
+                "酥脆",
+                "网红"
+              ],
+              "price": 19.9,
+              "stock": 203,
+              "rating": 4.7,
+              "description": "咸蛋黄均匀裹粉，米香酥脆。"
+            }
+          ],
+          "mcpResults": [],
+          "skillResults": []
+        },
+        "output": {
+          "reasons": {
+            "P001": "咸口海盐芝士味，独立包装适合办公室分享，价格29.9元在预算内。",
+            "P002": "低糖健康，独立包装，但口味偏甜，不完全符合咸口需求，价格45.9元在预算内。",
+            "P006": "咸蛋黄咸口，酥脆网红零食，价格19.9元在预算内，适合分享。"
+          }
+        },
+        "startedAt": "2026-07-02T16:54:11.171Z",
+        "durationMs": 1655,
+        "attempts": 1
+      },
+      {
+        "id": "step_8",
+        "capability": "response-generator",
+        "type": "skill",
+        "purpose": "必经 Skill · $response-generator",
+        "status": "success",
+        "input": {
+          "userInput": "预算 80 元，想买点办公室分享的咸口零食",
+          "conversation_history": [],
+          "need": {
+            "intent": "购买零食",
+            "taste": [
+              "咸"
+            ],
+            "categories": [
+              "零食"
+            ],
+            "budget": 80,
+            "quantity": 1,
+            "scenario": "办公室分享",
+            "constraints": [],
+            "needs_price": true
+          },
+          "products": [
+            {
+              "id": "P002",
+              "name": "低糖每日坚果",
+              "category": "坚果",
+              "tags": [
+                "低糖",
+                "健康",
+                "独立包装"
+              ],
+              "price": 45.9,
+              "stock": 83,
+              "rating": 4.9,
+              "description": "6种坚果果干搭配，无额外蔗糖。"
+            },
+            {
+              "id": "P001",
+              "name": "海盐芝士小饼干",
+              "category": "饼干",
+              "tags": [
+                "咸口",
+                "芝士",
+                "独立包装"
+              ],
+              "price": 29.9,
+              "stock": 126,
+              "rating": 4.8,
+              "description": "酥脆咸香，独立小包，适合办公室分享。"
+            },
+            {
+              "id": "P006",
+              "name": "咸蛋黄糯米锅巴",
+              "category": "膨化",
+              "tags": [
+                "咸口",
+                "酥脆",
+                "网红"
+              ],
+              "price": 19.9,
+              "stock": 203,
+              "rating": 4.7,
+              "description": "咸蛋黄均匀裹粉，米香酥脆。"
+            }
+          ],
+          "reasons": {
+            "P001": "咸口海盐芝士味，独立包装适合办公室分享，价格29.9元在预算内。",
+            "P002": "低糖健康，独立包装，但口味偏甜，不完全符合咸口需求，价格45.9元在预算内。",
+            "P006": "咸蛋黄咸口，酥脆网红零食，价格19.9元在预算内，适合分享。"
+          },
+          "price": {
+            "subtotal": 161.5,
+            "activityApplied": {
+              "id": "A001",
+              "name": "零食满减季"
+            },
+            "couponApplied": {
+              "id": "C002",
+              "name": "满129减20券",
+              "discount": 20
+            },
+            "savings": 35,
+            "finalPrice": 126.5,
+            "note": "按推荐商品各 1 件试算，不含运费"
+          },
+          "mcpResults": [],
+          "skillResults": []
+        },
+        "output": {
+          "reply": "您好！根据您的预算和需求，为您推荐以下适合办公室分享的咸口零食：\n\n1. **海盐芝士小饼干**（29.9元）——咸口芝士味，独立小包，方便分享，评分4.8。\n2. **咸蛋黄糯米锅巴**（19.9元）——咸蛋黄口味，酥脆网红零食，评分4.7。\n3. **低糖每日坚果**（45.9元）——健康独立包装，但口味偏甜，不完全符合咸口需求。\n\n按推荐商品各1件试算，总价126.5元（已使用满129减20券，原价161.5元），超出预算。若您希望控制在80元内，建议选择海盐芝士小饼干（29.9元）+咸蛋黄糯米锅巴（19.9元），合计49.8元，均在预算内。请问您需要下单这两款吗？"
+        },
+        "startedAt": "2026-07-02T16:54:12.826Z",
+        "durationMs": 2883,
+        "attempts": 1
+      },
+      {
+        "id": "step_9",
+        "capability": "risk-check",
+        "type": "skill",
+        "purpose": "强制最终风控审核",
+        "status": "success",
+        "input": {
+          "userInput": "预算 80 元，想买点办公室分享的咸口零食",
+          "conversation_history": [],
+          "reply": "您好！根据您的预算和需求，为您推荐以下适合办公室分享的咸口零食：\n\n1. **海盐芝士小饼干**（29.9元）——咸口芝士味，独立小包，方便分享，评分4.8。\n2. **咸蛋黄糯米锅巴**（19.9元）——咸蛋黄口味，酥脆网红零食，评分4.7。\n3. **低糖每日坚果**（45.9元）——健康独立包装，但口味偏甜，不完全符合咸口需求。\n\n按推荐商品各1件试算，总价126.5元（已使用满129减20券，原价161.5元），超出预算。若您希望控制在80元内，建议选择海盐芝士小饼干（29.9元）+咸蛋黄糯米锅巴（19.9元），合计49.8元，均在预算内。请问您需要下单这两款吗？",
+          "products": [
+            {
+              "id": "P002",
+              "name": "低糖每日坚果",
+              "category": "坚果",
+              "tags": [
+                "低糖",
+                "健康",
+                "独立包装"
+              ],
+              "price": 45.9,
+              "stock": 83,
+              "rating": 4.9,
+              "description": "6种坚果果干搭配，无额外蔗糖。"
+            },
+            {
+              "id": "P001",
+              "name": "海盐芝士小饼干",
+              "category": "饼干",
+              "tags": [
+                "咸口",
+                "芝士",
+                "独立包装"
+              ],
+              "price": 29.9,
+              "stock": 126,
+              "rating": 4.8,
+              "description": "酥脆咸香，独立小包，适合办公室分享。"
+            },
+            {
+              "id": "P006",
+              "name": "咸蛋黄糯米锅巴",
+              "category": "膨化",
+              "tags": [
+                "咸口",
+                "酥脆",
+                "网红"
+              ],
+              "price": 19.9,
+              "stock": 203,
+              "rating": 4.7,
+              "description": "咸蛋黄均匀裹粉，米香酥脆。"
+            }
+          ],
+          "price": {
+            "subtotal": 161.5,
+            "activityApplied": {
+              "id": "A001",
+              "name": "零食满减季"
+            },
+            "couponApplied": {
+              "id": "C002",
+              "name": "满129减20券",
+              "discount": 20
+            },
+            "savings": 35,
+            "finalPrice": 126.5,
+            "note": "按推荐商品各 1 件试算，不含运费"
+          },
+          "mcpResults": [],
+          "skillResults": []
+        },
+        "output": {
+          "passed": false,
+          "risk_level": "high",
+          "issues": [
+            "推荐商品中低糖每日坚果（45.9元）被描述为偏甜，但用户要求咸口零食，且该商品标签无咸口，属于不相关推荐。",
+            "计算总价时使用了满129减20券，但推荐商品总价161.5元，实际推荐组合（海盐芝士小饼干+咸蛋黄糯米锅巴）仅49.8元，未达到券使用门槛，却提及券后价，造成误导。",
+            "推荐组合总价49.8元，但回复中未明确说明该组合未使用优惠券，且未提及运费等可能额外费用。"
+          ],
+          "safe_reply": "您好！根据您的预算和需求，为您推荐以下适合办公室分享的咸口零食：\n\n1. **海盐芝士小饼干**（29.9元）——咸口芝士味，独立小包，方便分享，评分4.8。\n2. **咸蛋黄糯米锅巴**（19.9元）——咸蛋黄口味，酥脆网红零食，评分4.7。\n\n以上两款合计49.8元，均在80元预算内，且均为咸口零食，适合办公室分享。请问您需要下单这两款吗？"
+        },
+        "startedAt": "2026-07-02T16:54:15.709Z",
+        "durationMs": 4079,
+        "attempts": 1
+      }
+    ],
+    "status": "pending",
+    "createdAt": "2026-07-02T16:55:05.142Z"
+  }
+]

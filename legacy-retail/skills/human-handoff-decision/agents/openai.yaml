@@ -1,0 +1,4 @@
+interface:
+  display_name: "人工转接判断"
+  short_description: "识别高风险、权限不足、重复失败以及客户明确要求人工等转接条件"
+  default_prompt: "使用 $human-handoff-decision 判断当前客服请求是否需要转人工。"

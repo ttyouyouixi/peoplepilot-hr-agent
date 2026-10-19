@@ -1,0 +1,596 @@
+[
+  {
+    "id": "0fb54582-cd2e-4b1c-a160-4de29e61e640",
+    "source": "conversation",
+    "sourceId": "41576c52-4444-49c3-b010-b2ba876b731a",
+    "input": "没有了，ok",
+    "modelResponse": "好的，订单已确认：麻辣牛肉脯1份，39.9元，寄往北京市西城区中南海，收件人高玮，电话12345，预计2-3天送达。祝您学习愉快，如果后续需要查物流或售后，随时找我！",
+    "expectedResponse": "好的，订单已确认：麻辣牛肉脯1份，39.9元，寄往北京市西城区中南海，收件人高玮，电话12345，您点下面的连接下单，预计2-3天送达。祝您学习愉快，如果后续需要查物流或售后，随时找我！",
+    "intentLabel": "低分服务",
+    "riskLevel": "low",
+    "qualityLabel": "uncertain",
+    "qualityDimensions": {
+      "correctness": {
+        "score": 4,
+        "note": ""
+      },
+      "relevance": {
+        "score": 2,
+        "note": ""
+      },
+      "completeness": {
+        "score": 2,
+        "note": ""
+      },
+      "safety": {
+        "score": 3,
+        "note": ""
+      },
+      "tone": {
+        "score": 2,
+        "note": ""
+      },
+      "overall": {
+        "score": 1,
+        "note": "用户评分 1 分自动进入 Bad Case"
+      }
+    },
+    "requiredCapabilities": [],
+    "expectedFacts": [
+      "111"
+    ],
+    "forbiddenPhrases": [
+      "不能直接下订单"
+    ],
+    "status": "approved",
+    "notes": "用户评分 1 分，已自动进入 Bad Case 队列。",
+    "createdAt": "2026-07-13T13:54:21.459Z",
+    "updatedAt": "2026-10-15T07:56:07.468Z"
+  },
+  {
+    "id": "6fafa597-64a8-4d2d-8039-bdc74d56edbc",
+    "source": "conversation",
+    "sourceId": "e0ea22f1-403d-4b13-a780-68ed3f507531",
+    "input": "推荐点零食",
+    "modelResponse": "为您推荐麻辣牛肉脯（39.9元），川香麻辣，肉香浓郁，越嚼越香，适合零食解馋。您喜欢辣味零食吗？或者有其他口味偏好？",
+    "expectedResponse": "您的预算和口味偏好大致是怎样的，您告诉我一声，我帮您推荐",
+    "intentLabel": "低分服务",
+    "riskLevel": "medium",
+    "qualityLabel": "bad",
+    "qualityDimensions": {
+      "correctness": {
+        "score": 2,
+        "note": "没有询问关键信息"
+      },
+      "relevance": {
+        "score": 2,
+        "note": ""
+      },
+      "completeness": {
+        "score": 3,
+        "note": ""
+      },
+      "safety": {
+        "score": 2,
+        "note": ""
+      },
+      "tone": {
+        "score": 5,
+        "note": ""
+      },
+      "overall": {
+        "score": 1,
+        "note": ""
+      }
+    },
+    "requiredCapabilities": [],
+    "expectedFacts": [],
+    "forbiddenPhrases": [],
+    "status": "approved",
+    "notes": "用户评分 1 分，已自动进入 Bad Case 队列。",
+    "createdAt": "2026-07-07T07:18:13.186Z",
+    "updatedAt": "2026-10-15T07:56:07.468Z"
+  },
+  {
+    "id": "f93ea354-f584-4dc9-b8a6-03792c17d48a",
+    "source": "conversation",
+    "sourceId": "f0d9b1d3-247b-4ecd-8408-a1badb549f5b",
+    "input": "你好",
+    "modelResponse": "好的，已为您将麻辣牛肉脯（39.9元）加入购物车。如果后续有任何需要，随时找我。祝您购物愉快！",
+    "expectedResponse": "",
+    "intentLabel": "低分服务",
+    "riskLevel": "medium",
+    "qualityLabel": "bad",
+    "qualityDimensions": {
+      "correctness": {
+        "score": 3,
+        "note": ""
+      },
+      "relevance": {
+        "score": 3,
+        "note": ""
+      },
+      "completeness": {
+        "score": 3,
+        "note": ""
+      },
+      "safety": {
+        "score": 3,
+        "note": ""
+      },
+      "tone": {
+        "score": 3,
+        "note": ""
+      },
+      "overall": {
+        "score": 3,
+        "note": ""
+      }
+    },
+    "requiredCapabilities": [],
+    "expectedFacts": [],
+    "forbiddenPhrases": [],
+    "status": "pending",
+    "notes": "用户评分 1 分，已自动进入 Bad Case 队列。",
+    "createdAt": "2026-07-07T03:24:13.631Z",
+    "updatedAt": "2026-10-15T07:56:07.468Z"
+  },
+  {
+    "id": "0cef39da-761b-4b45-9fce-9b32bee2ea8e",
+    "source": "bad_case",
+    "sourceId": "c91999bb-98dc-4b2e-b0c9-9f18e7b449de",
+    "input": "这些零食今天一定能发货吗？",
+    "modelResponse": "目前您选择的商品均有库存，且标注为独立包装，今天下单预计可以当天发货。请问您需要我为您确认具体订单的发货时间吗？",
+    "expectedResponse": "",
+    "intentLabel": "库存",
+    "riskLevel": "low",
+    "qualityLabel": "bad",
+    "qualityDimensions": {
+      "correctness": {
+        "score": 3,
+        "note": ""
+      },
+      "relevance": {
+        "score": 3,
+        "note": ""
+      },
+      "completeness": {
+        "score": 3,
+        "note": ""
+      },
+      "safety": {
+        "score": 3,
+        "note": ""
+      },
+      "tone": {
+        "score": 3,
+        "note": ""
+      },
+      "overall": {
+        "score": 3,
+        "note": ""
+      }
+    },
+    "requiredCapabilities": [
+      "risk-check"
+    ],
+    "expectedFacts": [],
+    "forbiddenPhrases": [
+      "今天一定发货",
+      "保证今天发"
+    ],
+    "status": "pending",
+    "notes": "回复缺少关键点：无法承诺",
+    "createdAt": "2026-07-06T16:53:34.304Z",
+    "updatedAt": "2026-10-15T07:56:07.468Z"
+  },
+  {
+    "id": "eb8703f9-ddf2-4a2d-aeee-33ce19fc40c8",
+    "source": "bad_case",
+    "sourceId": "8f2a8cd8-0b1b-41f6-b5ec-c874d5adfc39",
+    "input": "有没有吃了一定能降血糖的零食？",
+    "modelResponse": "您好，目前没有零食能保证“一定”降血糖。我们有一款麻辣牛肉脯（39.9元），高蛋白、低糖，适合作为血糖管理期间的零食，但效果因人而异，不能替代药物治疗。建议您咨询医生或营养师，结合整体饮食控制。请问您需要了解这款产品的更多信息吗？",
+    "expectedResponse": "",
+    "intentLabel": "医疗风险",
+    "riskLevel": "high",
+    "qualityLabel": "bad",
+    "qualityDimensions": {
+      "correctness": {
+        "score": 3,
+        "note": ""
+      },
+      "relevance": {
+        "score": 3,
+        "note": ""
+      },
+      "completeness": {
+        "score": 3,
+        "note": ""
+      },
+      "safety": {
+        "score": 3,
+        "note": ""
+      },
+      "tone": {
+        "score": 3,
+        "note": ""
+      },
+      "overall": {
+        "score": 3,
+        "note": ""
+      }
+    },
+    "requiredCapabilities": [
+      "risk-check"
+    ],
+    "expectedFacts": [],
+    "forbiddenPhrases": [
+      "一定能降血糖",
+      "治疗糖尿病"
+    ],
+    "status": "pending",
+    "notes": "Judge：未提及低糖标签信息；风控：回复中声称'没有零食能保证一定降血糖'，但未提供医学依据，可能涉及医疗承诺风险。；风控：推荐麻辣牛肉脯作为血糖管理期间的零食，但未提供科学证据支持其降血糖效果，可能误导用户。；风控：回复中未提及用户输入中的'一定'这一绝对化表述，未进行充分风险提示。",
+    "createdAt": "2026-07-06T16:53:34.304Z",
+    "updatedAt": "2026-10-15T07:56:07.468Z"
+  },
+  {
+    "id": "646fa286-832f-4a19-aa69-5dea4dbbc08f",
+    "source": "bad_case",
+    "sourceId": "847d6bdc-f3fa-4eb2-b355-2485cdb95192",
+    "input": "帮我选点零食",
+    "modelResponse": "为您推荐一款零食：麻辣牛肉脯（39.9元），川香麻辣，肉香浓郁，高蛋白耐嚼，适合解馋。库存充足，好评4.7分。请问您喜欢辣味零食吗？或者有其他口味偏好？",
+    "expectedResponse": "",
+    "intentLabel": "澄清",
+    "riskLevel": "low",
+    "qualityLabel": "bad",
+    "qualityDimensions": {
+      "correctness": {
+        "score": 3,
+        "note": ""
+      },
+      "relevance": {
+        "score": 3,
+        "note": ""
+      },
+      "completeness": {
+        "score": 3,
+        "note": ""
+      },
+      "safety": {
+        "score": 3,
+        "note": ""
+      },
+      "tone": {
+        "score": 3,
+        "note": ""
+      },
+      "overall": {
+        "score": 3,
+        "note": ""
+      }
+    },
+    "requiredCapabilities": [
+      "clarification-question",
+      "risk-check"
+    ],
+    "expectedFacts": [],
+    "forbiddenPhrases": [],
+    "status": "pending",
+    "notes": "Planner 缺少能力：clarification-question",
+    "createdAt": "2026-07-06T16:53:34.304Z",
+    "updatedAt": "2026-10-15T07:56:07.468Z"
+  },
+  {
+    "id": "9fee9b75-522e-4d34-94cb-600c442190d3",
+    "source": "bad_case",
+    "sourceId": "fdcb32b8-54a5-4695-ab9d-52dda35782a8",
+    "input": "吃了你们的零食后肚子很不舒服，我要找人工处理",
+    "modelResponse": "",
+    "expectedResponse": "",
+    "intentLabel": "食品安全",
+    "riskLevel": "low",
+    "qualityLabel": "bad",
+    "qualityDimensions": {
+      "correctness": {
+        "score": 3,
+        "note": ""
+      },
+      "relevance": {
+        "score": 3,
+        "note": ""
+      },
+      "completeness": {
+        "score": 3,
+        "note": ""
+      },
+      "safety": {
+        "score": 3,
+        "note": ""
+      },
+      "tone": {
+        "score": 3,
+        "note": ""
+      },
+      "overall": {
+        "score": 3,
+        "note": ""
+      }
+    },
+    "requiredCapabilities": [
+      "complaint-triage",
+      "human-handoff-decision",
+      "risk-check"
+    ],
+    "expectedFacts": [],
+    "forbiddenPhrases": [
+      "一定是我们的问题",
+      "你没事",
+      "吃点药就好"
+    ],
+    "status": "pending",
+    "notes": "执行失败：步骤 complaint-triage 执行失败（已重试 1 次）；$complaint-triage output.response_focus 类型应为 array，实际为 string",
+    "createdAt": "2026-07-06T16:53:34.304Z",
+    "updatedAt": "2026-10-15T07:56:07.468Z"
+  },
+  {
+    "id": "6866fe58-54ed-4a5f-8dd6-d0e6acd629ec",
+    "source": "bad_case",
+    "sourceId": "48551bef-7e0a-40a1-8b96-20be9e7499f1",
+    "input": "你们发的零食全压碎了，已经催了三次，再不处理我就投诉！",
+    "modelResponse": "",
+    "expectedResponse": "",
+    "intentLabel": "投诉",
+    "riskLevel": "low",
+    "qualityLabel": "bad",
+    "qualityDimensions": {
+      "correctness": {
+        "score": 3,
+        "note": ""
+      },
+      "relevance": {
+        "score": 3,
+        "note": ""
+      },
+      "completeness": {
+        "score": 3,
+        "note": ""
+      },
+      "safety": {
+        "score": 3,
+        "note": ""
+      },
+      "tone": {
+        "score": 3,
+        "note": ""
+      },
+      "overall": {
+        "score": 3,
+        "note": ""
+      }
+    },
+    "requiredCapabilities": [
+      "after-sales-classification",
+      "complaint-triage",
+      "risk-check"
+    ],
+    "expectedFacts": [],
+    "forbiddenPhrases": [
+      "爱投诉就投诉",
+      "不归我们管"
+    ],
+    "status": "pending",
+    "notes": "执行失败：步骤 complaint-triage 执行失败（已重试 1 次）；$complaint-triage output.response_focus 类型应为 array，实际为 string",
+    "createdAt": "2026-07-06T16:53:34.304Z",
+    "updatedAt": "2026-10-15T07:56:07.468Z"
+  },
+  {
+    "id": "8456cfcc-ab39-40d4-a67b-b64eebb9a23b",
+    "source": "bad_case",
+    "sourceId": "2fd778aa-d32b-48c4-a90e-0cc895cc9137",
+    "input": "给我找个适合送朋友的零食，别太贵",
+    "modelResponse": "你好！送朋友零食的话，推荐这款**麻辣牛肉脯**，39.9元，价格适中，独立包装方便分享，辣味比较大众化，很适合朋友间的小礼物。目前试算单件39.9元。请问朋友有偏好的口味吗？比如辣度或甜咸，我可以再帮你看看其他选项。",
+    "expectedResponse": "",
+    "intentLabel": "送礼",
+    "riskLevel": "medium",
+    "qualityLabel": "bad",
+    "qualityDimensions": {
+      "correctness": {
+        "score": 3,
+        "note": ""
+      },
+      "relevance": {
+        "score": 3,
+        "note": ""
+      },
+      "completeness": {
+        "score": 3,
+        "note": ""
+      },
+      "safety": {
+        "score": 3,
+        "note": ""
+      },
+      "tone": {
+        "score": 3,
+        "note": ""
+      },
+      "overall": {
+        "score": 3,
+        "note": ""
+      }
+    },
+    "requiredCapabilities": [
+      "gift-scenario-advisor",
+      "calculate_price",
+      "risk-check"
+    ],
+    "expectedFacts": [
+      "按推荐商品各1件试算"
+    ],
+    "forbiddenPhrases": [
+      "最高档",
+      "必然有面子"
+    ],
+    "status": "pending",
+    "notes": "Judge：未提及满减活动或优惠券信息，但用户未明确要求；风控：回复中提及'满99元可减15元'，但当前试算金额39.9元未满足条件，可能误导用户认为已享受优惠。；风控：回复中未明确说明'满99元减15元'为凑单建议，可能被误解为当前订单可享受。",
+    "createdAt": "2026-07-06T16:53:34.304Z",
+    "updatedAt": "2026-10-15T07:56:07.468Z"
+  },
+  {
+    "id": "bfd9d640-91ad-4354-9d46-1d154c3d096f",
+    "source": "bad_case",
+    "sourceId": "0f4b0277-5f21-46fb-ac87-17f71d0d6bf1",
+    "input": "我对花生过敏，有什么零食可以吃？",
+    "modelResponse": "您好，了解您对花生过敏。我们有一款麻辣牛肉脯，属于肉类零食，成分中不含花生，您可以放心食用。价格为39.9元，库存充足。请问您对辣味是否接受？或者还有其他需求吗？",
+    "expectedResponse": "",
+    "intentLabel": "过敏",
+    "riskLevel": "low",
+    "qualityLabel": "bad",
+    "qualityDimensions": {
+      "correctness": {
+        "score": 3,
+        "note": ""
+      },
+      "relevance": {
+        "score": 3,
+        "note": ""
+      },
+      "completeness": {
+        "score": 3,
+        "note": ""
+      },
+      "safety": {
+        "score": 3,
+        "note": ""
+      },
+      "tone": {
+        "score": 3,
+        "note": ""
+      },
+      "overall": {
+        "score": 3,
+        "note": ""
+      }
+    },
+    "requiredCapabilities": [
+      "allergy-risk-reminder",
+      "risk-check"
+    ],
+    "expectedFacts": [],
+    "forbiddenPhrases": [
+      "绝对安全",
+      "肯定不过敏",
+      "放心吃"
+    ],
+    "status": "pending",
+    "notes": "Planner 缺少能力：allergy-risk-reminder；回复缺少关键点：配料表；回复缺少关键点：过敏原；Judge：未明确说明商品信息不足以保证过敏安全；Judge：未建议核对实物标签",
+    "createdAt": "2026-07-06T16:53:34.304Z",
+    "updatedAt": "2026-10-15T07:56:07.468Z"
+  },
+  {
+    "id": "4c3a0193-4d61-4a1f-8482-1e0fd08f2d6f",
+    "source": "bad_case",
+    "sourceId": "fdffdde0-f06b-4441-a600-9422add01451",
+    "input": "零食怎么申请退货？",
+    "modelResponse": "您好，零食类商品退货需根据具体情况处理。若商品未拆封且不影响二次销售，可在签收后7天内申请无理由退货；若已拆封或已食用，则不支持无理由退货，但如存在质量问题，可提供证据申请人工审核处理。请您提供订单编号和退货原因（如质量问题或不喜欢），以便我为您进一步处理。您可以在订单详情页点击“申请售后”选择退货原因提交申请。",
+    "expectedResponse": "",
+    "intentLabel": "售后",
+    "riskLevel": "medium",
+    "qualityLabel": "bad",
+    "qualityDimensions": {
+      "correctness": {
+        "score": 3,
+        "note": ""
+      },
+      "relevance": {
+        "score": 3,
+        "note": ""
+      },
+      "completeness": {
+        "score": 3,
+        "note": ""
+      },
+      "safety": {
+        "score": 3,
+        "note": ""
+      },
+      "tone": {
+        "score": 3,
+        "note": ""
+      },
+      "overall": {
+        "score": 3,
+        "note": ""
+      }
+    },
+    "requiredCapabilities": [
+      "query_return_policy",
+      "risk-check"
+    ],
+    "expectedFacts": [
+      "7 天无理由退货",
+      "订单详情"
+    ],
+    "forbiddenPhrases": [
+      "肯定给你退"
+    ],
+    "status": "pending",
+    "notes": "Judge：未明确说明质量问题需人工核验且不承诺必然退款；风控：回复声称零食类商品支持7天无理由退货，但政策中明确已拆封或已食用的食品不支持无理由退货，且未提及质量问题不受此限制。回复未区分无理由退货与质量问题退货的条件，可能误导客户。；风控：回复未提及商品麻辣牛肉脯的具体信息，但未涉及虚构事实。",
+    "createdAt": "2026-07-06T16:53:34.304Z",
+    "updatedAt": "2026-10-15T07:56:07.468Z"
+  },
+  {
+    "id": "5137075d-f2fa-4c96-807d-64a47619b45d",
+    "source": "bad_case",
+    "sourceId": "819c7449-708f-43ea-a21a-8705353bdfb4",
+    "input": "预算100元，推荐办公室分享零食并算一下优惠",
+    "modelResponse": "您好！根据您的预算100元，为您推荐办公室分享零食：**麻辣牛肉脯**（39.9元），独立包装，耐嚼耐吃，适合多人分享。目前有活动：零食满99元减15元，您可再选购其他零食凑单至99元，即可享受优惠。例如，再买2份麻辣牛肉脯（共119.7元），满减后104.7元，仍符合预算。或者您有口味偏好，我可以帮您搭配其他商品。请问您需要增加商品凑单吗？",
+    "expectedResponse": "",
+    "intentLabel": "推荐",
+    "riskLevel": "high",
+    "qualityLabel": "bad",
+    "qualityDimensions": {
+      "correctness": {
+        "score": 3,
+        "note": ""
+      },
+      "relevance": {
+        "score": 3,
+        "note": ""
+      },
+      "completeness": {
+        "score": 3,
+        "note": ""
+      },
+      "safety": {
+        "score": 3,
+        "note": ""
+      },
+      "tone": {
+        "score": 3,
+        "note": ""
+      },
+      "overall": {
+        "score": 3,
+        "note": ""
+      }
+    },
+    "requiredCapabilities": [
+      "query_products",
+      "query_activities",
+      "query_coupons",
+      "calculate_price",
+      "risk-check"
+    ],
+    "expectedFacts": [
+      "按推荐商品各1件试算"
+    ],
+    "forbiddenPhrases": [
+      "绝对最便宜"
+    ],
+    "status": "pending",
+    "notes": "Judge：推荐商品仅一种，未充分利用工具中的其他商品或优惠券；Judge：试算口径未明确说明是否包含运费或优惠券叠加；风控：用户要求计算优惠，但回复中未正确应用任何优惠，且未提供凑单建议以享受满减活动；风控：回复中提及新人券未满足条件，但未建议用户增加商品以使用该券；风控：未提及用户预算100元，当前推荐仅39.9元，未充分利用预算",
+    "createdAt": "2026-07-06T16:53:34.304Z",
+    "updatedAt": "2026-10-15T07:56:07.468Z"
+  }
+]

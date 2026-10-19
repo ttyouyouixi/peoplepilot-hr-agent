@@ -1,0 +1,4 @@
+interface:
+  display_name: "过敏风险提示"
+  short_description: "识别客户过敏原与饮食限制并生成克制且可以核验的安全提示"
+  default_prompt: "使用 $allergy-risk-reminder 检查客户需求中的过敏与饮食风险。"

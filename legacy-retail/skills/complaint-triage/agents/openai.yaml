@@ -1,0 +1,4 @@
+interface:
+  display_name: "投诉分级"
+  short_description: "识别客户情绪、投诉严重程度、升级信号以及服务补救处理重点"
+  default_prompt: "使用 $complaint-triage 分析投诉风险并确定处理优先级。"

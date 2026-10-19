@@ -1,0 +1,8 @@
+[
+  {"id":"employee.profile.query","name":"员工档案查询","description":"查询基本信息、教育、岗位职级、履历、人事异动、技能和雇佣状态。","implementation":"json_query","dataSource":"employees.json","enabled":true},
+  {"id":"attendance.record.query","name":"考勤统计查询","description":"按输入的时间范围返回加班、请假、出差、迟到、早退等统计结果，不返回每日明细。","implementation":"json_query","dataSource":"attendance.json","enabled":true},
+  {"id":"feedback.360.query","name":"360反馈查询","description":"查询反馈时间、各维度分数、平均分、优点和改进建议。","implementation":"json_query","dataSource":"feedback-360.json","enabled":true},
+  {"id":"performance.record.query","name":"绩效记录查询","description":"查询绩效周期名称、结果、综合评语、优点、缺点和评价内容。","implementation":"json_query","dataSource":"performance.json","enabled":true},
+  {"id":"org.structure.query","name":"组织关系查询","description":"查询团队成员、团队名称、直属Leader和汇报关系。","implementation":"json_query","dataSource":"org-structure.json","enabled":true},
+  {"id":"talent.review.query","name":"人才盘点查询","description":"查询盘点周期、九宫格位置及其横轴绩效和纵轴潜力、继任池和发展准备度。","implementation":"json_query","dataSource":"talent-reviews.json","enabled":true}
+]

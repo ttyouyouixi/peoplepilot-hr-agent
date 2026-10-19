@@ -1,0 +1,52 @@
+[
+  {
+    "id": "employee-summary",
+    "model": "default",
+    "temperature": 0.1,
+    "maxTokens": 900,
+    "enabled": true,
+    "outputSchema": {"type":"object","required":["summary_scope","sections","data_gaps","evidence_refs"],"properties":{"summary_scope":{"type":"string"},"sections":{"type":"array"},"basic_info":{"type":"object"},"responsibility":{"type":"object"},"recent_performance":{"type":"object"},"talent_review":{"type":"object"},"strengths":{"type":"array"},"development":{"type":"object"},"data_gaps":{"type":"array"},"evidence_refs":{"type":"array"}}}
+  },
+  {
+    "id": "team-summary",
+    "model": "default",
+    "temperature": 0.1,
+    "maxTokens": 900,
+    "enabled": true
+  },
+  {
+    "id": "management-signal",
+    "model": "default",
+    "temperature": 0,
+    "maxTokens": 900,
+    "enabled": true
+  },
+  {
+    "id": "communication-prep",
+    "model": "default",
+    "temperature": 0.3,
+    "maxTokens": 900,
+    "enabled": true
+  },
+  {
+    "id": "action-plan",
+    "model": "default",
+    "temperature": 0.1,
+    "maxTokens": 900,
+    "enabled": true
+  },
+  {
+    "id": "response-generator",
+    "model": "default",
+    "temperature": 0.2,
+    "maxTokens": 900,
+    "enabled": true
+  },
+  {
+    "id": "risk-check",
+    "model": "default",
+    "temperature": 0,
+    "maxTokens": 900,
+    "enabled": true
+  }
+]

@@ -1,0 +1,4 @@
+interface:
+  display_name: "客服话术生成"
+  short_description: "把核验后的商品推荐、价格计算与优惠信息组织为自然客服回复"
+  default_prompt: "使用 $response-generator 根据已核验信息起草最终中文客服回复。"

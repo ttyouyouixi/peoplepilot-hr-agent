@@ -1,0 +1,4 @@
+interface:
+  display_name: "风控审核"
+  short_description: "审核客服回复中的虚假价格、夸大宣传、医疗功效与敏感承诺风险"
+  default_prompt: "使用 $risk-check 审核这条客服回复并在需要时生成安全修正版。"

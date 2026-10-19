@@ -1,0 +1,158 @@
+[
+  {
+    "id": "9e621198-51b5-49c9-b70f-de4e429e7834",
+    "kind": "skills",
+    "label": "保存 Skill 配置",
+    "payload": [
+      {
+        "id": "employee-summary",
+        "description": "基于员工档案、考勤、绩效和360反馈生成有证据引用的员工状态总结",
+        "prompt": "# 员工个人总结\n\n## 目标\n基于已查询的员工档案、考勤、绩效、360 反馈和人才盘点数据，生成有证据引用的员工状态总结。\n\n## 规则\n- 只使用 Tool 返回的数据，不补造事实。\n- 区分事实、计算结果、推测和待确认事项。\n- 必须标注数据时间范围和 data_gaps。\n- 不直接做淘汰、晋升、离职等最终决定。\n\n## 输出字段\n`current_status`, `strengths`, `changes`, `attention_points`, `data_gaps`, `evidence_refs`",
+        "name": "employee-summary",
+        "model": "default",
+        "temperature": 0.1,
+        "maxTokens": 900,
+        "enabled": true
+      },
+      {
+        "id": "team-summary",
+        "description": "基于组织关系和团队成员数据汇总团队结构、变化和管理状态",
+        "prompt": "# 团队管理总结\n\n## 目标\n基于组织关系和团队成员数据，汇总团队结构、变化、工作状态与管理关注对象。\n\n## 规则\n- 同时展示总体趋势和异常个体，不只输出平均值。\n- 所有趋势必须带时间范围和样本量。\n- 不把考勤异常直接等同于绩效问题。\n\n## 输出字段\n`team_overview`, `people_changes`, `attendance_summary`, `performance_summary`, `skill_distribution`, `attention_people`, `data_gaps`, `evidence_refs`",
+        "name": "team-summary",
+        "model": "default",
+        "temperature": 0.1,
+        "maxTokens": 900,
+        "enabled": true
+      },
+      {
+        "id": "management-signal",
+        "description": "从员工或团队事实中识别需要Leader进一步确认的管理关注信号",
+        "prompt": "# 管理关注信号识别\n\n## 目标\n从员工或团队事实中识别需要 Leader 进一步确认的管理信号。\n\n## 规则\n- 输出关注信号，不输出员工价值判断。\n- 每个信号必须包含事实、指标变化、时间范围、可能影响和待确认问题。\n- 信息不足、样本过少或来源冲突时降低置信度。\n\n## 输出字段\n`signals`, `overall_attention_level`, `limitations`, `evidence_refs`",
+        "name": "management-signal",
+        "model": "default",
+        "temperature": 0,
+        "maxTokens": 900,
+        "enabled": true
+      },
+      {
+        "id": "communication-prep",
+        "description": "基于事实和管理关注信号准备尊重、清晰、可执行的管理沟通",
+        "prompt": "# 管理沟通准备\n\n## 目标\n基于事实和管理关注信号，为 Leader 准备一次尊重、清晰、可执行的管理沟通。\n\n## 规则\n- 先讲事实，再讲影响，再确认员工视角，最后讨论行动。\n- 不使用羞辱、威胁、歧视或未经依据的心理判断。\n- 不承诺薪酬、晋升或其他超出权限的结果。\n\n## 输出字段\n`conversation_goal`, `facts_to_share`, `questions_to_ask`, `recommended_sequence`, `sample_phrases`, `phrases_to_avoid`, `expected_agreements`, `evidence_refs`",
+        "name": "communication-prep",
+        "model": "default",
+        "temperature": 0.3,
+        "maxTokens": 900,
+        "enabled": true
+      },
+      {
+        "id": "action-plan",
+        "description": "将管理问题和沟通目标转化为负责人、时间、指标和复盘点",
+        "prompt": "# 管理行动计划建议\n\n## 目标\n将已确认的管理问题和沟通目标转化为可跟进的行动计划建议。\n\n## 规则\n- 每个行动必须有负责人、时间、成功指标和复盘点。\n- 只生成建议，不自动创建任务。\n- 涉及敏感人事决策时标记 requires_hr_review。\n\n## 输出字段\n`actions`, `follow_up_questions`, `escalation_conditions`, `evidence_refs`",
+        "name": "action-plan",
+        "model": "default",
+        "temperature": 0.1,
+        "maxTokens": 900,
+        "enabled": true
+      },
+      {
+        "id": "response-generator",
+        "description": "将已完成分析的结构化人事结果组织成适合当前角色的最终回复",
+        "prompt": "# 人事管理回复生成\n\n编写友好、自然、克制的中文客服回复。\n\n- 只呈现已选商品和已核验事实。\n- 当客户意图是查物流、问政策或处理售后时，直接使用对应 Tool 和 Skill 结果回答，不要附带无关商品推荐。\n- 价格、活动、优惠券和最终价必须原样引用 Tool 输出，不要自行重算或改写。\n- 已提供试算假设时，要明确说明。\n- 不要承诺输入中没有的库存、配送时间、效果或折扣。\n- 在合适时用一个有价值的追问收尾。\n\n只输出一个 JSON 对象：`{\"reply\":\"完整客服回复\"}`。",
+        "name": "客服话术生成",
+        "model": "default",
+        "temperature": 0.2,
+        "maxTokens": 900,
+        "enabled": true
+      },
+      {
+        "id": "risk-check",
+        "description": "审核人事回复的事实一致性、敏感信息、权限、语气和人工确认边界",
+        "prompt": "# 人事风险与事实一致性审核\n\n将待发送回复与客户请求、商品事实、本地 Tool 结果、MCP 结果和其他 Skill 结果进行对照。\n\n检查：\n\n- 虚构或改写价格、活动、优惠券和总价。\n- 绝对化、夸大、医疗、过敏安全、库存或配送承诺。\n- 已核验输入中不存在的商品或事实。\n- 对价格试算假设的重要遗漏。\n\n输出一个 JSON 对象：\n\n- `passed`：是否通过。\n- `risk_level`：`low`、`medium` 或 `high`。\n- `issues`：风险问题字符串数组。\n- `safe_reply`：安全时原样返回，否则返回完整的修正版回复。",
+        "name": "风控审核",
+        "model": "default",
+        "temperature": 0,
+        "maxTokens": 900,
+        "enabled": true
+      }
+    ],
+    "createdAt": "2026-10-18T08:03:13.160Z"
+  },
+  {
+    "id": "cfd5fd29-c647-4e13-ac03-be1b8d998f86",
+    "kind": "skills",
+    "label": "保存 Skill 配置",
+    "payload": [
+      {
+        "id": "employee-summary",
+        "description": "基于员工档案、考勤、绩效和360反馈生成有证据引用的员工状态总结",
+        "prompt": "# 员工个人总结\n\n## 目标\n基于已查询的员工档案、考勤、绩效、360 反馈和人才盘点数据，生成有证据引用的员工状态总结。\n\n## 规则\n- 只使用 Tool 返回的数据，不补造事实。\n- 区分事实、计算结果、推测和待确认事项。\n- 必须标注数据时间范围和 data_gaps。\n- 不直接做淘汰、晋升、离职等最终决定。\n\n## 输出字段\n`current_status`, `strengths`, `changes`, `attention_points`, `data_gaps`, `evidence_refs`",
+        "name": "employee-summary",
+        "model": "default",
+        "temperature": 0.1,
+        "maxTokens": 900,
+        "enabled": true
+      },
+      {
+        "id": "team-summary",
+        "description": "基于组织关系和团队成员数据汇总团队结构、变化和管理状态",
+        "prompt": "# 团队管理总结\n\n## 目标\n基于组织关系和团队成员数据，汇总团队结构、变化、工作状态与管理关注对象。\n\n## 规则\n- 同时展示总体趋势和异常个体，不只输出平均值。\n- 所有趋势必须带时间范围和样本量。\n- 不把考勤异常直接等同于绩效问题。\n\n## 输出字段\n`team_overview`, `people_changes`, `attendance_summary`, `performance_summary`, `skill_distribution`, `attention_people`, `data_gaps`, `evidence_refs`",
+        "name": "team-summary",
+        "model": "default",
+        "temperature": 0.1,
+        "maxTokens": 900,
+        "enabled": true
+      },
+      {
+        "id": "management-signal",
+        "description": "从员工或团队事实中识别需要Leader进一步确认的管理关注信号",
+        "prompt": "# 管理关注信号识别\n\n## 目标\n从员工或团队事实中识别需要 Leader 进一步确认的管理信号。\n\n## 规则\n- 输出关注信号，不输出员工价值判断。\n- 每个信号必须包含事实、指标变化、时间范围、可能影响和待确认问题。\n- 信息不足、样本过少或来源冲突时降低置信度。\n\n## 输出字段\n`signals`, `overall_attention_level`, `limitations`, `evidence_refs`",
+        "name": "management-signal",
+        "model": "default",
+        "temperature": 0,
+        "maxTokens": 900,
+        "enabled": true
+      },
+      {
+        "id": "communication-prep",
+        "description": "基于事实和管理关注信号准备尊重、清晰、可执行的管理沟通",
+        "prompt": "# 管理沟通准备\n\n## 目标\n基于事实和管理关注信号，为 Leader 准备一次尊重、清晰、可执行的管理沟通。\n\n## 规则\n- 先讲事实，再讲影响，再确认员工视角，最后讨论行动。\n- 不使用羞辱、威胁、歧视或未经依据的心理判断。\n- 不承诺薪酬、晋升或其他超出权限的结果。\n\n## 输出字段\n`conversation_goal`, `facts_to_share`, `questions_to_ask`, `recommended_sequence`, `sample_phrases`, `phrases_to_avoid`, `expected_agreements`, `evidence_refs`",
+        "name": "communication-prep",
+        "model": "default",
+        "temperature": 0.3,
+        "maxTokens": 900,
+        "enabled": true
+      },
+      {
+        "id": "action-plan",
+        "description": "将管理问题和沟通目标转化为负责人、时间、指标和复盘点",
+        "prompt": "# 管理行动计划建议\n\n## 目标\n将已确认的管理问题和沟通目标转化为可跟进的行动计划建议。\n\n## 规则\n- 每个行动必须有负责人、时间、成功指标和复盘点。\n- 只生成建议，不自动创建任务。\n- 涉及敏感人事决策时标记 requires_hr_review。\n\n## 输出字段\n`actions`, `follow_up_questions`, `escalation_conditions`, `evidence_refs`",
+        "name": "action-plan",
+        "model": "default",
+        "temperature": 0.1,
+        "maxTokens": 900,
+        "enabled": true
+      },
+      {
+        "id": "response-generator",
+        "description": "将已完成分析的结构化人事结果组织成适合当前角色的最终回复",
+        "prompt": "# 人事管理回复生成\n\n编写友好、自然、克制的中文客服回复。\n\n- 只呈现已选商品和已核验事实。\n- 当客户意图是查物流、问政策或处理售后时，直接使用对应 Tool 和 Skill 结果回答，不要附带无关商品推荐。\n- 价格、活动、优惠券和最终价必须原样引用 Tool 输出，不要自行重算或改写。\n- 已提供试算假设时，要明确说明。\n- 不要承诺输入中没有的库存、配送时间、效果或折扣。\n- 在合适时用一个有价值的追问收尾。\n\n只输出一个 JSON 对象：`{\"reply\":\"完整客服回复\"}`。",
+        "name": "客服话术生成",
+        "model": "default",
+        "temperature": 0.2,
+        "maxTokens": 900,
+        "enabled": true
+      },
+      {
+        "id": "risk-check",
+        "description": "审核人事回复的事实一致性、敏感信息、权限、语气和人工确认边界",
+        "prompt": "# 人事风险与事实一致性审核\n\n将待发送回复与客户请求、商品事实、本地 Tool 结果、MCP 结果和其他 Skill 结果进行对照。\n\n检查：\n\n- 虚构或改写价格、活动、优惠券和总价。\n- 绝对化、夸大、医疗、过敏安全、库存或配送承诺。\n- 已核验输入中不存在的商品或事实。\n- 对价格试算假设的重要遗漏。\n\n输出一个 JSON 对象：\n\n- `passed`：是否通过。\n- `risk_level`：`low`、`medium` 或 `high`。\n- `issues`：风险问题字符串数组。\n- `safe_reply`：安全时原样返回，否则返回完整的修正版回复。",
+        "name": "风控审核",
+        "model": "default",
+        "temperature": 0,
+        "maxTokens": 900,
+        "enabled": true
+      }
+    ],
+    "createdAt": "2026-10-18T08:03:10.928Z"
+  }
+]

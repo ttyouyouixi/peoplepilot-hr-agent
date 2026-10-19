@@ -1,0 +1,4 @@
+interface:
+  display_name: "澄清问题生成"
+  short_description: "发现影响推荐结果的缺失信息并生成最少数量的关键澄清追问"
+  default_prompt: "使用 $clarification-question 为当前客服问题生成必要的澄清问题。"

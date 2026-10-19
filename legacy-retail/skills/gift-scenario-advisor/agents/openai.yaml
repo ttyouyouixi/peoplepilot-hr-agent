@@ -1,0 +1,4 @@
+interface:
+  display_name: "送礼场景顾问"
+  short_description: "分析送礼对象、人数、预算以及包装偏好并给出可靠的选品侧重点"
+  default_prompt: "使用 $gift-scenario-advisor 分析零食送礼场景和选品要求。"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "推荐理由生成"
+  short_description: "依据用户需求与商品事实生成具体、克制且可以核验的推荐理由"
+  default_prompt: "使用 $recommendation-reason 为这些商品推荐生成具体且可核验的理由。"

@@ -1,0 +1,5 @@
+[
+  {"id":"C001","name":"新人券","threshold":59,"discount":8,"enabled":true,"stackable":true},
+  {"id":"C002","name":"满129减20券","threshold":129,"discount":20,"enabled":true,"stackable":true},
+  {"id":"C003","name":"品类券","threshold":49,"discount":6,"category":"坚果","enabled":true,"stackable":false}
+]

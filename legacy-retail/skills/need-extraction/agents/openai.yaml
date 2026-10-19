@@ -1,0 +1,4 @@
+interface:
+  display_name: "需求结构化"
+  short_description: "从零食客服原始问题中提取结构化需求、预算、场景与限制条件"
+  default_prompt: "使用 $need-extraction 将这条零食客服请求转换为结构化需求。"

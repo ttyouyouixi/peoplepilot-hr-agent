@@ -1,0 +1,22 @@
+[
+  {
+    "orderId": "86731",
+    "productName": "沙发",
+    "status": "local_warehouse",
+    "statusText": "已到本地仓",
+    "estimatedDelivery": "明天",
+    "carrier": "安心速运",
+    "trackingNumber": "AX86731001",
+    "lastUpdated": "2026-07-03 14:20"
+  },
+  {
+    "orderId": "SN20260701",
+    "productName": "夏日零食分享装",
+    "status": "in_transit",
+    "statusText": "运输中",
+    "estimatedDelivery": "2026-07-05",
+    "carrier": "顺风速运",
+    "trackingNumber": "SF13900008888",
+    "lastUpdated": "2026-07-03 09:35"
+  }
+]

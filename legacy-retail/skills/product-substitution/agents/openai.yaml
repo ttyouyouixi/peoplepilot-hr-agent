@@ -1,0 +1,4 @@
+interface:
+  display_name: "缺货替代决策"
+  short_description: "根据客户需求与候选商品事实为缺货或不适配商品选择合适替代方案"
+  default_prompt: "使用 $product-substitution 从候选商品中选择合适的替代商品。"

@@ -1,0 +1,4 @@
+[
+  {"id":"A001","name":"零食满减季","type":"threshold_reduction","threshold":99,"discount":15,"enabled":true,"description":"实付商品金额满99元减15元"},
+  {"id":"A002","name":"坚果组合优惠","type":"category_discount","category":"坚果","rate":0.9,"enabled":true,"description":"坚果类商品9折"}
+]

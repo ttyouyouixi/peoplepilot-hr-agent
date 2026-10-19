@@ -1,0 +1,11 @@
+[
+  {
+    "id": "4f3bf994-d22c-47f8-9607-64b55ad8199e",
+    "name": "新 Prompt A/B",
+    "skillId": "need-extraction",
+    "variantPrompt": "在保持事实准确的前提下，让表达更简洁。",
+    "trafficPercent": 50,
+    "enabled": true,
+    "createdAt": "2026-07-02T16:55:23.213Z"
+  }
+]

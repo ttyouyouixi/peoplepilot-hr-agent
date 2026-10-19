@@ -1,0 +1,4 @@
+interface:
+  display_name: "会话摘要"
+  short_description: "把多轮客服对话压缩为客户事实、核心需求、已确认事项以及待处理问题"
+  default_prompt: "使用 $conversation-summary 总结当前客服会话和待办事项。"

@@ -1,0 +1,8 @@
+[
+  {"id":"P001","name":"海盐芝士小饼干","category":"饼干","tags":["咸口","芝士","独立包装"],"price":29.9,"stock":126,"rating":4.8,"description":"酥脆咸香，独立小包，适合办公室分享。"},
+  {"id":"P002","name":"低糖每日坚果","category":"坚果","tags":["低糖","健康","独立包装"],"price":45.9,"stock":83,"rating":4.9,"description":"6种坚果果干搭配，无额外蔗糖。"},
+  {"id":"P003","name":"麻辣牛肉脯","category":"肉类零食","tags":["辣味","高蛋白","耐嚼"],"price":39.9,"stock":62,"rating":4.7,"description":"川香麻辣，肉香浓郁，越嚼越香。"},
+  {"id":"P004","name":"冻干草莓脆","category":"果干","tags":["酸甜","低脂","儿童"],"price":25.9,"stock":155,"rating":4.8,"description":"整颗草莓冻干，配料简单，酥脆酸甜。"},
+  {"id":"P005","name":"黑巧燕麦能量棒","category":"代餐","tags":["低糖","饱腹","健身"],"price":35.9,"stock":91,"rating":4.6,"description":"黑巧与燕麦组合，轻负担又有饱腹感。"},
+  {"id":"P006","name":"咸蛋黄糯米锅巴","category":"膨化","tags":["咸口","酥脆","网红"],"price":19.9,"stock":203,"rating":4.7,"description":"咸蛋黄均匀裹粉，米香酥脆。"}
+]

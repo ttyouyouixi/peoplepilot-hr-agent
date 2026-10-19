@@ -1,0 +1,4 @@
+interface:
+  display_name: "商品推荐决策"
+  short_description: "仅从代码筛选后的候选商品中完成可信、可核验的推荐决策排序"
+  default_prompt: "使用 $recommendation-decision 从这些已核验候选商品中做出推荐决策。"

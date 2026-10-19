@@ -1,0 +1,4 @@
+interface:
+  display_name: "售后问题分类"
+  short_description: "识别退款、破损、漏发与物流类售后问题并输出处理优先级"
+  default_prompt: "使用 $after-sales-classification 对售后问题进行分类并给出处理建议。"
